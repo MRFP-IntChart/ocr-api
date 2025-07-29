@@ -12,7 +12,7 @@
   "scripts": {
     "build": "npm run clean && npm run compile-ts",
     "cbs": "npm run build && npm run start",
-    "clean": "rm -rf build",
+    "clean": "node -e \"require('fs').rmSync('./build', { recursive: true, force: true });\"",
     "compile-ts": "tsc --project ./",
     "start": "node ./build/src/index.js",
     "test": "npm run build && export FOR_TESTING=y && mocha --exit --timeout 15000"
