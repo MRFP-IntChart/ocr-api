@@ -1,6 +1,6 @@
 import express from 'express'
 
-import {addErrorHandlingToController} from '../error'
+import {addErrorHandlingToController} from '../error/index.js'
 
 
 async function pdfToText(req: express.Request, res: express.Response) {

@@ -1,4 +1,4 @@
-import {Route, routerFactory} from './types'
+import {Route, routerFactory} from './types.js'
 import controller from '../controller/index.js'
 
 const routes: Route[] = [

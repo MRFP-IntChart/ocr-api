@@ -1,6 +1,6 @@
 import express from 'express'
 
-import {ControllerMethod} from '../router/types'
+import {ControllerMethod} from '../router/types.js'
 
 
 export class HttpError extends Error {
