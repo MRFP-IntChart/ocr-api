@@ -14,7 +14,8 @@ describe('controller', () => {
   describe('pdfToText', () => {
     describe('auth', () => {
       it('should error without auth field', async () => {
-        const res = await request.execute(api).post('/pdf_to_text').send({})
+        const res = await request.execute(api).post('/pdf_to_text')
+          .send({})
         expect(res.status).to.equal(401)
       })
 
@@ -28,7 +29,8 @@ describe('controller', () => {
       it('should succeed if auth string is correct', async () => {
         const res = await request.execute(api).post('/pdf_to_text')
           .set(authHeaderProperty, config.secret)
-          .send({})
+          .set('Content-Type', 'multipart/form-data')
+          .attach('file', './tests/test_doc.pdf')
         expect(res.status).to.equal(200)
       })
     })
