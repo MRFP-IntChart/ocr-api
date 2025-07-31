@@ -7,7 +7,7 @@ const forTesting = process.env.FOR_TESTING === 'y'
 const config = {
   TESTING: forTesting,
   env: process.env.NODE_ENV,
-  secret: process.env.SECRET,
+  secret: process.env.SECRET ?? '',
 }
 
 export function isProductionEnv() {
