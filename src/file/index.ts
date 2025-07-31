@@ -66,7 +66,7 @@ export async function fileProcessing(
           }
         }
         if (!req.file) {
-          reject(new HttpError(500, 'There was an issue handling your request'))
+          reject(new HttpError(500, 'File could not be uploaded'))
           return
         }
         resolve(req.file)
