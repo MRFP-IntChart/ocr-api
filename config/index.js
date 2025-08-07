@@ -1,7 +1,7 @@
 import dotenv from "dotenv"
 
 
-dotenv.config()
+dotenv.config({quiet: true})
 
 const forTesting = process.env.FOR_TESTING === 'y'
 
